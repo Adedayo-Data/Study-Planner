@@ -10,11 +10,12 @@ public class DBConnection {
 	public static String user = "root";
 	public static String pass = "";
 	
-	public static Connection getConnection() throws ClassNotFoundException {
+	public static Connection getConnection() {
 		Connection conn = null;
 		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(url, user, pass);
-		}catch(Exception ex) {
+		}catch(ClassNotFoundException| SQLException ex) {
 			ex.printStackTrace();
 			
 		}
