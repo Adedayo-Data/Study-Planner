@@ -9,25 +9,25 @@ import java.sql.Statement;
 
 public class UserDAOImpl implements UserDAO{
 	
-	public void addUser(String username, String password) {
+	public boolean addUser(String username, String password) {
 		
-		String query = "INSERT INTO users (username, password) VALUES ? ?";
+		String query = "INSERT INTO users (username, Password) VALUES (?, ?)";
 		try {
 			Connection con = DBConnection.getConnection();
 			PreparedStatement pst = con.prepareStatement(query);
-			pst.setString(1, "username");
-			pst.setString(2, "password");
+			pst.setString(1, username);
+			pst.setString(2, password);
 			
 			int status = pst.executeUpdate();
-			if(status > 1) {
-//				PrintWriter out = res.getWriter();
-//				out.println("Record Added successfully");
-			}
+			
 			pst.close();
 			con.close();
-			}catch(Exception e) {
+			return status > 0;
+		}catch(Exception e) {
 				e.printStackTrace();
 			}
+		
+		return false;
 	}
 	public void removeUser(String username) {
 		
