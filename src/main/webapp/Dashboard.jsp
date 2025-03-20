@@ -20,7 +20,7 @@
 	<br>
 	<form action = "logout">
 		<input type = "submit" value = "logout"><br>
-		<a href = "AddTopics.jsp">Session Start</a>
+		<a href = "CreateSession.jsp">Session Start</a>
 	</form>
 	
 

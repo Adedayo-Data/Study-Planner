@@ -10,16 +10,16 @@ public class StudySessionData {
 	private String topic;
 	private LocalTime wishTime;
 	private LocalTime actualTime;
-	private LocalDate date;
+//	private LocalDate date;
 	
 	// Constructor 1
-	public StudySessionData(int userId, String subject, String topic, LocalTime wishTime, LocalDate date) {
+	public StudySessionData(int userId, String subject, String topic, LocalTime wishTime) {
 		this.userId = userId;
 		this.subject = subject;
 		this.topic = topic;
 		this.actualTime = LocalTime.of(0, 0);
 		this.wishTime = wishTime;
-		this.date = date;
+//		this.date = date;
 	}
 	
 	public int getUserId() {
@@ -38,7 +38,7 @@ public class StudySessionData {
 	public LocalTime getWishTime() {
 		return wishTime;
 	}
-	public LocalDate getDate() {
-		return date;
-	}
+//	public LocalDate getDate() {
+//		return date;
+//	}
 }

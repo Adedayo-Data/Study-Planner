@@ -40,7 +40,7 @@ public class addSessionServlet extends HttpServlet {
 		StudySessionDAOImpl sessionImpl = new StudySessionDAOImpl();
 		
 		// StudySessionData Instance
-		StudySessionData sessionData = new StudySessionData(userId, subject, topic, wishTime, date);
+		StudySessionData sessionData = new StudySessionData(userId, subject, topic, wishTime);
 		
 		// pass to the database
 		boolean status = sessionImpl.addStudySession(sessionData);
