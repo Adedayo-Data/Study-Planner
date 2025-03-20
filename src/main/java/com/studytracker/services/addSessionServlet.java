@@ -16,7 +16,7 @@ import com.studytracker.utils.StudySessionDAOImpl;
 /**
  * Servlet implementation class addSessionServlet
  */
-@WebServlet("/addsession")
+@WebServlet("/createSession")
 public class addSessionServlet extends HttpServlet {
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
@@ -24,10 +24,10 @@ public class addSessionServlet extends HttpServlet {
 		String subject = req.getParameter("subject");
 		String topic = req.getParameter("topic");
 		String wishTimeStr = req.getParameter("wishTime");
-		String dateStr = req.getParameter("date");
+//		String dateStr = req.getParameter("date");
 		
 		LocalTime wishTime = LocalTime.parse(wishTimeStr);
-		LocalDate date = LocalDate.parse(dateStr);
+//		LocalDate date = LocalDate.parse(dateStr);
 		
 		// get hold of the session
 		HttpSession session = req.getSession();
@@ -46,9 +46,9 @@ public class addSessionServlet extends HttpServlet {
 		boolean status = sessionImpl.addStudySession(sessionData);
 		
 		if(status) {
-			res.sendRedirect("dashboard.jsp?msg=SessionAdded");
+			res.sendRedirect("Dashboard.jsp");
 		}else {
-			res.sendRedirect("dashboard.jsp?msp=Error");
+			res.sendRedirect("Dashboard.jsp?msg=Error");
 		}
 		
 	}

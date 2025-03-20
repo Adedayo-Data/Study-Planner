@@ -12,13 +12,18 @@ public class User {
 		this.password = password;
 	} // end constructor
 	
+	public User(String username, String password) {
+		this.username = username;
+		this.password = password;
+	}
+	
 	public int getUserId(){
 		return user_id;
 	}
 	
-//	public void setUserId() {
-//		
-//	}
+	public void setUserId(int id) {
+		this.user_id = id;
+	}
 	
 	public String getUsername() {
 		return username;
