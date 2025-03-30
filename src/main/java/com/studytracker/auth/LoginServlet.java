@@ -16,6 +16,7 @@ public class LoginServlet extends HttpServlet {
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse res) {
 		
+		// System.out.println("doPost Invoked!");
 		
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");

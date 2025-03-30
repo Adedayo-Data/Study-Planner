@@ -9,6 +9,8 @@
 <body>
 	Welcome to the Dash....
 	<%
+		
+		// critical pages
 		response.setHeader("cache-control", "no-cache, no-store must-revalidate"); // HTTP 1.1
 		response.setHeader("pragma", "no-cache"); //In http 1.0
 		response.setHeader("Expires", "0"); // proxies
@@ -20,8 +22,8 @@
 	<br>
 	<form action = "logout">
 		<input type = "submit" value = "logout"><br>
-		<a href = "CreateSession.jsp">Session Start</a>
 	</form>
+	<a href = "CreateSession.jsp">Session Start</a>
 	
 
 </body>
